@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -6,48 +7,65 @@ body {
   height: 100vh;
   margin: 0;
   background-image: url(weatherimage.png);
+  background-size: cover;
+  background-position: center;
 }
 
+/* Main Container */
 #main_container {
-  position: relative; /* Relative to contain its children */
-  height: 100vh; /* Define height for the container */
-  width: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#phone {
+  width: 100%;
   height: 100vh;
-  position: absolute; /* Positioned to overlap with container */
-  z-index: 1; /* Ensure phone is beneath container */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Phone Image */
+#phone {
+  height: 80vh;
+  width: auto;
+  z-index: 1;
+  position: relative;
+}
+
+/* Container Positioned Inside Phone Frame */
 .container {
-  position: absolute; /* Positioned to overlap with phone */
-  text-align: center;
-  /* height: 75vh; */
-  width: 17%;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  z-index: 2; /* Ensure container is on top of phone */
+  position: absolute;
+  top: 20%; /* Adjust to position within the phone frame */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%; /* Width relative to phone frame */
+  max-width: 205px;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #6ce0ed;
+  text-align: center;
+  z-index: 2;
 }
 
+/* Search Input and Button */
 .search-container {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 #city-input {
   padding: 10px;
-  width: 200px;
+  width: 100%;
+  max-width: 180px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 #search-btn {
   padding: 10px;
-  margin: 20px;
+  width: 100%;
+  max-width: 250px;
+  margin: 10px 0;
   border: none;
   border-radius: 4px;
   background: #007BFF;
@@ -61,4 +79,37 @@ body {
 
 #weather-info {
   margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #phone {
+    height: 60vh;
+  }
+  
+  .container {
+    width: 80%;
+    top: 25%;
+  }
+  
+  #city-input,
+  #search-btn {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #phone {
+    height: 50vh;
+  }
+  
+  .container {
+    width: 85%;
+    top: 30%;
+  }
+  
+  #city-input,
+  #search-btn {
+    max-width: 100%;
+  }
 }
