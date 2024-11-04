@@ -6,7 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-image: url(weatherimage.png);
+  background-image: url(weatherdark.png);
   background-size: cover;
   background-position: center;
 }
@@ -42,7 +42,7 @@ body {
   padding: 5px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #6ce0ed;
+  background-color: #03487db1;
   text-align: center;
   z-index: 2;
 }
