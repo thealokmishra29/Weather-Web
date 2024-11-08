@@ -4,16 +4,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-  background-image: url(weatherdark.png);
-  background-size: cover;
-  background-position: center;
+  background: url(weatherdark.png) center / cover no-repeat;
 }
 
 /* Main Container */
 #main_container {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,30 +23,37 @@ body {
 /* Phone Image */
 #phone {
   height: 80vh;
-  width: auto;
-  z-index: 1;
+  width: 45vw;
   position: relative;
+  z-index: 1;
+  background: url("https://png.pngtree.com/png-clipart/20221216/original/pngtree-mobile-phone-frame-png-image_8750023.png") center / cover no-repeat;
+/* background-color: aqua; */
+}
+h1 {
+  font-size: 25px;
 }
 
-/* Container Positioned Inside Phone Frame */
+/* Inner Container Positioned Inside Phone Frame */
 .container {
   position: absolute;
-  top: 20%; /* Adjust to position within the phone frame */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 70%; /* Width relative to phone frame */
-  max-width: 205px;
-  padding: 5px;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 250px;
+  padding: 15px;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #03487db1;
+  /* background-color: rgba(3, 72, 125, 0.7); */
+  
   text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  color: black;
   z-index: 2;
 }
 
-/* Search Input and Button */
+/* Search Input and Button Styles */
 .search-container {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -63,53 +67,67 @@ body {
 
 #search-btn {
   padding: 10px;
-  width: 100%;
-  max-width: 250px;
-  margin: 10px 0;
+  width: 70%;
+  margin-top: 10px;
   border: none;
   border-radius: 4px;
-  background: #007BFF;
+  background-color: #007BFF;
   color: #fff;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 #search-btn:hover {
-  background: #0056b3;
+  /* background-color: #0056b3; */
 }
 
+/* Weather Info Container */
 #weather-info {
   margin-top: 20px;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  #phone {
-    height: 60vh;
+  body {
+    /* padding: 10px; */
   }
-  
+
+  #main_container {
+    height: auto;
+    padding: 15px;
+  }
+h1{
+  font-size: 20px;
+}
+  #phone {
+    height: 70vh;
+    width: 100%;
+    background: url("https://png.pngtree.com/png-clipart/20221216/original/pngtree-mobile-phone-frame-png-image_8750023.png") center / cover no-repeat;
+  }
+
   .container {
     width: 80%;
-    top: 25%;
+    max-width: 300px;
+    /* background-color: rgba(9, 225, 13, 0.8); */
+    padding: 20px;
   }
-  
-  #city-input,
-  #search-btn {
-    max-width: 100%;
-  }
-}
 
-@media (max-width: 480px) {
-  #phone {
-    height: 50vh;
+  .search-container {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
   }
-  
-  .container {
-    width: 85%;
-    top: 30%;
-  }
-  
+
   #city-input,
   #search-btn {
-    max-width: 100%;
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  #weather-info {
+    /* background-color: rgba(0, 255, 255, 0.2); */
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 10px;
   }
 }
