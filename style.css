@@ -32,7 +32,7 @@ h1 {
   position: relative;
   height: auto; /* Increases height to wrap the container */
   width: calc(19% + 20px); /* Increases width to wrap the container */
-  background: conic-gradient(from var(--angle), aqua, #010a16, rgb(223, 89, 89), rgba(7, 177, 75, 0.685));
+  background: conic-gradient(from var(--angle), transparent 40%, aqua, #010a16, rgb(223, 89, 89), rgba(7, 177, 75, 0.685));
   display: flex;
   align-items: center;
   justify-content: center;
