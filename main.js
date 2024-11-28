@@ -1,4 +1,5 @@
-const apiKey = 'a53819ec567cd3d81449694d1ab3d3c6';  // Replace 'YOUR_API_KEY' with your actual API key
+// API INTEGRATION
+const apiKey = 'a53819ec567cd3d81449694d1ab3d3c6'; 
 const searchButton = document.getElementById('search-btn');
 const cityInput = document.getElementById('city-input');
 const weatherInfo = document.getElementById('weather-info');
@@ -48,10 +49,11 @@ document.getElementById("city-input").addEventListener("keyup", function(event) 
     }
 });
 
+// Call weather fetching function
 document.getElementById("search-btn").addEventListener("click", function() {
     const city = document.getElementById("city-input").value;
     if(city) {
-        getWeather(city); // Call your weather fetching function
+        getWeather(city); 
     } else {
         alert("Please enter a city name");
     }
